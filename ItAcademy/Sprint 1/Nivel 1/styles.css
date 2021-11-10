@@ -1,0 +1,126 @@
+    body{
+        max-width: 1200px;
+        padding: 1rem;       
+        margin:0px;
+        /*min-width: 375px;*/
+    }
+
+
+    .wrapFirst{
+
+    background: black;
+    padding: 1rem;
+
+    }
+
+    .wrapFirst:nth-child(2n){
+    background: black;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    }
+    @media only screen and (max-width: 768px)/*769 es la medida estándar de IPad*/ { 
+        .wrapFirst:nth-child(2n) {
+          background-color: yellow;
+        }
+      }
+
+    .firstFirst{
+        background: purple;  
+        /* padding-right: 1rem;
+        padding-left: 1rem; */
+        display: flex;
+        padding: 1rem;
+        gap: 1rem;
+        
+    }
+    .secondFirst{
+        margin-top: 0.5rem;
+        background: brown;
+        height: 2rem;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .singleLineFirst{
+        height: 1rem;
+        background: red;
+        width: 100%;
+    }
+    .singleLineFirstShort{
+        height: 1rem;
+        background: red;
+        width:12rem;
+    }
+    .singleLineFirstTwo{
+        height: 1rem;
+        background: greenyellow;
+    }
+    .firstSecond{
+
+        background: purple;
+        flex-grow: 2; 
+        /*height: 7rem;*/    
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 1rem;
+        min-width: 400px;
+    }
+    .secondSecond{
+        background: rgb(206, 31, 60);
+        flex-grow: 1;
+        display: flex;  
+        flex-direction: column ;
+        padding: 1rem;
+        gap: 0.5rem;
+        min-width: 240px;
+    }
+    .singleLineSecond{
+        background: lightskyblue;
+        height: 1rem;
+        width: 48%;
+        flex-grow: 1;
+    }
+    .singleLineSecondTwo{
+        background: lightskyblue;
+    }
+    .singleLineSecondLong{
+        background: grey;
+        height: 1rem;
+        width: 100%;
+    }
+    .singleLineSecondRight{
+        background: olivedrab;
+        height: 1rem;
+        width: 100%;
+    }
+    .wrapFirst:nth-child(3n){
+    background: black;
+    padding: 1rem;
+    margin-top: 1rem;
+    }
+    .singleLineFooter{
+        background: orange;
+        height: 1rem;
+    }
+    @media only screen and (max-width: 500px)/*600 es la medida sugerida por https://www.w3schools.com/*/ { 
+        .wrapFirst:nth-child(2n) {
+          background-color: yellow;
+        }
+        .firstFirst{
+            flex-wrap: wrap;
+        }   
+            .firstSecond{
+                min-width: 50%;
+            }   
+            .secondSecond{
+                min-width: 50%;
+            }   
+        .singleLineFirstShort{
+           min-width: 100%;
+        }
+      }
