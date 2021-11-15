@@ -2,13 +2,11 @@
         max-width: 1200px;
         padding: 1rem;
         margin: 0px;
-        /*min-width: 375px;*/
     }
 
     /* Header background Image; */
 
     .wrapFirst {
-        /* background: black; */
         padding: 0rem 1rem 0rem 1rem;
         background-image: url("img/header.jpg");
         background-position: center;
@@ -22,24 +20,19 @@
         opacity: 0.5;
     }
 
-    .wrapFirst:nth-child(2n) {
-        /* background: black; */
+    .middle {
         background: white;
-        /* margin-top: 1rem; */
-        display: flex;
-        flex-direction: row;
-        /* flex-wrap: wrap; */
-        gap: 1rem;
         padding: 1rem 0rem 1rem 0rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas: "article aside";
     }
 
-    .firstFirst {
-        /* background: purple;   */
-        /* padding-right: 1rem;
-        padding-left: 1rem; */
-        display: flex;
-        padding: 1rem;
+    .navbar {
+        display: grid;
         gap: 1rem;
+        padding: 1rem;
+        grid-template-areas: "logo menu rrss";
     }
 
     .secondFirst {
@@ -50,13 +43,16 @@
 
     /*Navbar*/
 
+    /*menu*/
+
     .singleLineFirst {
         color: grey;
-        justify-content: space-between;
-        /* background: red; */
-        width: 100%;
-        display: flex;
+        display: grid;
         align-items: center;
+        grid-area: menu;
+        grid-gap: 60px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding-left: 20px;
     }
 
     .singleLineFirst>div:hover {
@@ -67,25 +63,23 @@
     /*Logo*/
 
     .singleLineFirstShort {
-        display: flex;
+        display: grid;
         align-items: center;
-        /* background: red; */
-        width: 12rem;
-        justify-content: flex-start;
         animation: slideLeft 1s ease-in;
+        grid-area: logo;
     }
 
     /*RRSS*/
 
     .singleLineFirstShortTwo {
         color: gray;
-        display: flex;
+        display: grid;
         align-items: center;
-        /* background: red; */
-        width: 12rem;
-        gap: 1.5rem;
-        justify-content: flex-end;
         animation: slideRight 1s ease-in;
+        grid-area: rrss;
+        justify-content: center;
+        grid-template-columns: 50px 50px;
+        justify-items: end  ;
     }
 
     .singleLineFirstShortTwo>div:hover {
@@ -98,51 +92,48 @@
         width: 4rem;
     }
 
-    .animTitle{
+    .animTitle {
         animation: slideUp 4s;
     }
 
     /*Semitransparencia*/
 
     .singleLineFirstTwo {
-        /* background: greenyellow; */
         margin: 0rem 2rem 0rem 2rem;
         background: rgb(173, 216, 230, 0.2);
-        /* opacity: 0.3;*/
         height: 7.5rem;
     }
 
-    .firstSecond {
+    .cardsContainer {
         background: lightgray;
-        flex-grow: 2;
-        /*height: 7rem;*/
-        display: flex;
-        flex-wrap: wrap;
+        grid-area: article;
         padding: 1rem;
-        gap: 1.5rem;
-        /* min-width: 400px; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5rem;
     }
 
-    .secondSecond {
+    .aside {
         background: lightgray;
-        ;
-        /* flex-grow: 1; */
-        display: flex;
-        flex-direction: column;
         padding: 1rem;
         gap: 0.5rem;
         min-width: 240px;
+        grid-area: aside;
     }
 
     /*Cards*/
 
-    .singleLineSecond {
+    .cards {
         background: white;
         height: 29rem;
-        width: 18rem;
-        /*Estaba en 48% originalmente*/
-        flex-grow: 1;
+        min-width: 18rem;
         padding: 1rem;
+    }
+
+    .copete {
+        width: 100%;
+        text-align: center;
+        grid-column: 1/3;
     }
 
     .cardPicTurismo {
@@ -201,7 +192,6 @@
     .columnas {
         justify-content: center;
         padding-top: 1rem;
-        /* max-width: 20rem; */
         column-count: 2;
     }
 
@@ -210,22 +200,17 @@
         margin-block-start: 0em;
     }
 
-    .singleLineSecondLong {
-        width: 100%;
-        text-align: center;
-    }
-
     .singleLineSecondRight {
         background: lightgray;
         width: 100%;
-        /* height: 1rem; */
         max-width: 245px;
         text-align: center;
     }
 
-    .wrapFirst:nth-child(3n) {
+    .footer {
         background: lightgray;
         margin-top: 1rem;
+        padding: 0rem 1rem 0rem 1rem;
     }
 
     .singleLineFooter {
@@ -245,6 +230,7 @@
             transform: translate(0);
         }
     }
+
     @keyframes slideRight {
         0% {
             opacity: 0;
@@ -255,6 +241,7 @@
             transform: translate(0);
         }
     }
+
     @keyframes slideUp {
         0% {
             opacity: 0;
@@ -280,17 +267,17 @@
             justify-content: space-around;
             padding-left: 35px;
         }
-        .wrapFirst:nth-child(2n) {
+        .middle {
             /* background-color: yellow; */
             flex-wrap: wrap;
         }
-        .firstFirst {
+        .navbar {
             flex-wrap: wrap;
         }
-        .firstSecond {
+        .cardsContainer {
             min-width: 50%;
         }
-        .secondSecond {
+        .aside {
             min-width: 50%;
         }
         .singleLineFirstShort {
@@ -302,9 +289,8 @@
     /*TABLET*/
 
         {
-        .wrapFirst:nth-child(2n) {
-            /* background-color: yellow; */
-            flex-wrap: wrap;
+        .middle {
+            grid-template-columns: repeat(auto-fill, 186px);
         }
         .singleLineSecondRight {
             max-width: none;
